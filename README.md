@@ -78,6 +78,7 @@ KoELECTRA의 vocab size가 KoBERT의 약 4배이므로 정확도가 향상될 �
 
 ## 추론
 1. Soft voting
+> ![image](https://github.com/teamgaon/SANUP/blob/main/pic/11.png)
 
 2. Hard + Soft voting
 > - 5개의 모델 중 동일한 label 값의 수가 3 이상이면 해당 label 할당
@@ -85,10 +86,13 @@ KoELECTRA의 vocab size가 KoBERT의 약 4배이므로 정확도가 향상될 �
 > ![image](https://github.com/teamgaon/SANUP/blob/main/pic/9.png)
 >
 > - label이 할당되지 않은 row는 soft label 값을 할당
-> ![image]
+> ![image](https://github.com/teamgaon/SANUP/blob/main/pic/12.png)
 
+## 결과
+valid : train data의 10%
+![image](https://github.com/teamgaon/SANUP/blob/main/pic/13.png)
     ```
   print(len(df[df['soft'] == valid['target']])/len(df))
-  print(len(df[df['hard'] == valid['target']])/len(df))
   print(len(df[df['mix'] == valid['target']])/len(df))
     ```
+![image](https://github.com/teamgaon/SANUP/blob/main/pic/14.png)
