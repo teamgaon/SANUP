@@ -89,10 +89,18 @@ KoELECTRA의 vocab size가 KoBERT의 약 4배이므로 정확도가 향상될 �
 > ![image](https://github.com/teamgaon/SANUP/blob/main/pic/12.png)
 
 ## 결과
-valid : train data의 10%
-![image](https://github.com/teamgaon/SANUP/blob/main/pic/13.png)
+valid : train data의 10% (voting 성능 비교)
+
+![image](https://github.com/teamgaon/SANUP/blob/main/pic/13.png)  
+
     ```
   print(len(df[df['soft'] == valid['target']])/len(df))
   print(len(df[df['mix'] == valid['target']])/len(df))
     ```
+    
 ![image](https://github.com/teamgaon/SANUP/blob/main/pic/14.png)
+
+### soft voting 선정
+
+## 성과
+![image](https://github.com/teamgaon/SANUP/blob/main/pic/15.jpg)
