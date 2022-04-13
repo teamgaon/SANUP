@@ -6,7 +6,7 @@
 전국사업체조사 자료 데이터
 - 일련번호(AI_id), 산업대분류(digit_1), 산업중분류(digit_2), 산업소분류(digit_3), 사업 대상(text_obj), 사업 방법(text_mthd), 사업 취급품목(text_deal)
 
-![image](https://github.com/teamgaon/SANUP/blob/main/pic/KakaoTalk_20220413_134348181.png)
+![image](https://github.com/teamgaon/SANUP/blob/main/pic/sdsd.png)
 
 - text 컬럼 생성
   - 토크나이징을 위해 사업 대상(text_obj), 사업 방법(text_mthd), 사업 취급품목(text_deal) 병합
