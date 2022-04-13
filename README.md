@@ -58,11 +58,21 @@ KoELECTRA의 vocab size가 KoBERT의 약 4배이므로 정확도가 향상될 �
 #### Learning rate scheduler
 - Cosine annealing with warmup
 
-
 1. 첫 번째 모델
 > - digit_1, digit_2, digit_3를 병합하여 target으로 예측
 > ![image](https://github.com/teamgaon/SANUP/blob/main/pic/7.png)
->  
+>   - train acc 0.93
+>   - test acc 0.92
 
 2. 두 번째 모델
 > - digit_1, digit_2, digit_3를 각각 target으로 예측
+>   - digit_1
+>     - train acc 0.99
+>     - test acc 0.98
+>   - digit_2
+>     - train acc 0.97
+>     - test acc 0.96
+>   - digit_3
+>     - train acc 0.93
+>     - test acc 0.92
+>     
