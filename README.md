@@ -1,17 +1,18 @@
 # 통계데이터 인공지능 활용대회
 ### 자연어 기반 인공지능 산업분류 자동화
-자연어 기반의 통계데이터를 인공지능으로 자동 분류하는 기계학습 모델 발굴
+자연어 기반의 통계데이터를 인공지능으로 자동 분류하는 기계학습 모델 발굴  
+
+<img src="https://github.com/teamgaon/SANUP/blob/main/pic/KakaoTalk_20220413_132720788.png" width="300">
 
 ## 데이터프레임
 전국사업체조사 자료 데이터
 - 일련번호(AI_id), 산업대분류(digit_1), 산업중분류(digit_2), 산업소분류(digit_3), 사업 대상(text_obj), 사업 방법(text_mthd), 사업 취급품목(text_deal)
 
 ![image](https://github.com/teamgaon/SANUP/blob/main/pic/sdsd.png)
-
 - text 컬럼 생성
   - 토크나이징을 위해 사업 대상(text_obj), 사업 방법(text_mthd), 사업 취급품목(text_deal) 병합
   
-![image](https://github.com/teamgaon/SANUP/blob/main/pic/6.png)
+![image](https://github.com/teamgaon/SANUP/blob/main/pic/6.png){: width="100" height="50"}
 
 ## 데이터 전처리
 ### [hanspell](https://github.com/ssut/py-hanspell)
