@@ -50,13 +50,13 @@ BERT의 학습 방식을 바꾸어서, 좀 더 가벼우면서도 성능을 개�
 ***
 KoELECTRA의 vocab size가 KoBERT의 약 4배이므로 정확도가 향상될 것으로 판단
 
-#### StratifiedKFold
-- Kfold ensemble
+#### Kfold ensemble
+- [StratifiedKFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)
   - fold = 5
 #### Optimizer
-- AdamW
+- [AdamW](https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html)
 #### Learning rate scheduler
-- Cosine annealing with warmup
+- [Cosine annealing with warmup](https://huggingface.co/docs/transformers/main_classes/optimizer_schedules#transformers.get_cosine_with_hard_restarts_schedule_with_warmup)
 
 1. 첫 번째 모델
 > - digit_1, digit_2, digit_3를 병합하여 target으로 예측
@@ -75,4 +75,20 @@ KoELECTRA의 vocab size가 KoBERT의 약 4배이므로 정확도가 향상될 �
 >   - digit_3
 >     - train acc 0.93
 >     - test acc 0.92
->     
+
+## 추론
+1. Soft voting
+
+2. Hard + Soft voting
+> - 5개의 모델 중 동일한 label 값의 수가 3 이상이면 해당 label 할당
+> - 3개 이상인 label 값이 없다면 0 할당
+> ![image](https://github.com/teamgaon/SANUP/blob/main/pic/9.png)
+>
+> - label이 할당되지 않은 row는 soft label 값을 할당
+> ![image]
+
+    ```
+  print(len(df[df['soft'] == valid['target']])/len(df))
+  print(len(df[df['hard'] == valid['target']])/len(df))
+  print(len(df[df['mix'] == valid['target']])/len(df))
+    ```
