@@ -94,8 +94,8 @@ valid : train data의 10% (voting 성능 비교)
 ![image](https://github.com/teamgaon/SANUP/blob/main/pic/13.png)  
 
     ```
-  print(len(df[df['soft'] == valid['target']])/len(df))
-  print(len(df[df['mix'] == valid['target']])/len(df))
+    print(len(df[df['soft'] == valid['target']])/len(df))  
+    print(len(df[df['mix'] == valid['target']])/len(df))
     ```
     
 ![image](https://github.com/teamgaon/SANUP/blob/main/pic/14.png)
