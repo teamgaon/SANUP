@@ -14,7 +14,7 @@
 ![image](https://github.com/teamgaon/SANUP/blob/main/pic/6.png)
 
 ## 데이터 전처리
-> ### [hanspell](https://github.com/ssut/py-hanspell)
+### [hanspell](https://github.com/ssut/py-hanspell)
 > - 불용어 처리 후, 네이버 맞춤법 검사기를 통해 오탈자, 띄어쓰기 전처리
 >
 > ![image](https://github.com/teamgaon/SANUP/blob/main/pic/%EB%B0%94%EA%BE%BC%20%EA%B2%83.png)
@@ -22,11 +22,39 @@
 > - hanspell이 잘못 처리한 띄어쓰기 수정  
 >   - 도 매 -> 도매
  
-> ### 토크나이저[(KoELECTRA)](https://github.com/monologg/KoELECTRA)
+### 토크나이저[(KoELECTRA)](https://github.com/monologg/KoELECTRA)
 > - 모델 학습에 필요한 문장 최대 길이 계산  
 >   - max_length=64
 > 
 > ![image](https://github.com/teamgaon/SANUP/blob/main/pic/KakaoTalk_20220413_134348181.png)
 
+## 모델링
+### KoELECTRA
+BERT의 학습 방식을 바꾸어서, 좀 더 가벼우면서도 성능을 개선한 모델 중 하나이다.
 
->
+- KoBERT
+  - 사전(Vocabulary)
+    - 크기 : 8,002
+    - 한글 위키 기반으로 학습한 토크나이저(SentencePiece)
+    - Less number of parameters(92M < 110M )
+- KoELECTRA  
+
+|     | Vocab Len | do_lower_case |
+| --- | --------: | ------------: |
+| v1  |     32200 |         False |
+| v2  |     32200 |         False |
+| v3  |     35000 |         False |
+
+  - v1, v2의 경우 약 14G Corpus (2.6B tokens)를 사용 (뉴스, 위키, 나무위키)
+  - v3의 경우 약 20G의 모두의 말뭉치를 추가적으로 사용 (신문, 문어, 구어, 메신저, 웹)
+
+vocab 수가 약 4배임
+단어 수 훨씬 많아서 훈련 잘될듯
+
+1. 첫 번째 모델
+> - digit_1, digit_2, digit_3를 병합하여 target으로 예측
+> ![image](https://github.com/teamgaon/SANUP/blob/main/pic/7.png)
+> 
+
+2. 두 번째 모델
+> - digit_1, digit_2, digit_3를 각각 target으로 예측
