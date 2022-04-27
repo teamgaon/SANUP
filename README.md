@@ -104,4 +104,4 @@ valid : train data의 10% (voting 성능 비교)
 ### soft voting 선정
 
 ## 성과
-![image](https://github.com/teamgaon/SANUP/blob/main/pic/15.jpg)
+![image](https://github.com/teamgaon/SANUP/blob/main/pic/4_27.jpg)
