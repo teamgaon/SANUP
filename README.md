@@ -12,7 +12,7 @@
 - text 컬럼 생성
   - 토크나이징을 위해 사업 대상(text_obj), 사업 방법(text_mthd), 사업 취급품목(text_deal) 병합
   
-![image](https://github.com/teamgaon/SANUP/blob/main/pic/6.png){: width="100" height="50"}
+![image](https://github.com/teamgaon/SANUP/blob/main/pic/6.png)
 
 ## 데이터 전처리
 ### [hanspell](https://github.com/ssut/py-hanspell)
